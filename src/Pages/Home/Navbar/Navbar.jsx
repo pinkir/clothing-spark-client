@@ -1,4 +1,4 @@
-import { FaShoppingCart } from "react-icons/fa";
+import { FaHeart, FaShoppingCart, FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -14,6 +14,7 @@ const Navbar = () => {
                         <li><Link to='/products'>Products</Link></li>
                         <li><Link to='/dashboard'>Dashboard</Link></li>
                         <li><Link to='/login'>Login</Link></li>
+
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl text-yellow-400 font-extrabold ">Clothing Spark</a>
@@ -22,13 +23,15 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/allproduct'>All Products</Link></li>
-                    <li><Link to='/dashboard'>Dashboard</Link></li>
+                    <li><Link to='/dashboard'><FaShoppingCart className="text-yellow-400 text-2xl"></FaShoppingCart></Link></li>
                     <li><Link to='/login'>Login</Link></li>
+
 
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="text-3xl"><FaShoppingCart></FaShoppingCart></a>
+                <FaHeart className="text-red-600 me-3 text-xl"></FaHeart>
+                <a className="text-xl"><FaUserAlt></FaUserAlt></a>
             </div>
         </div>
     );

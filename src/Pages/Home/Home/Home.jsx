@@ -2,6 +2,8 @@ import Products from "../Products/Products";
 import Banner from "./Banner";
 import BestSeller from "./BestSeller";
 import Contact from "./Contact";
+import Gallary from "./Gallary";
+import Partners from "./Partners";
 
 const Home = () => {
     return (
@@ -10,6 +12,8 @@ const Home = () => {
             <Banner></Banner>
             <Products></Products>
             <BestSeller></BestSeller>
+            <Gallary></Gallary>
+            <Partners></Partners>
             <Contact></Contact>
         </div>
     );

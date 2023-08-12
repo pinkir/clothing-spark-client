@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const Product = ({ product }) => {
-    const { id, name, price, stock, rating, img } = product;
+    const { id, name, price, stock, img } = product;
+
+    const handleOrder =() =>{
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Click on cart and review your order',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
     return (
         
         <div className="card w-80 bg-base-100 shadow-xl text-center">
@@ -14,7 +25,7 @@ const Product = ({ product }) => {
                 
 
                 <div className="card-actions justify-center">
-                    <button className="btn btn-sm bg-cyan-400">Add To Cart</button>
+                    <button onClick={handleOrder} className="btn btn-sm bg-cyan-400">Add To Cart</button>
                     <Link to={`../productdetails/${id}`}>
                         <button className="btn btn-sm bg-green-500">View Details</button>
 
