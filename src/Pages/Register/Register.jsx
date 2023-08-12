@@ -1,9 +1,11 @@
+import useTitle from '../../Hooks/usetitle';
 import bg from '../../images/banner5.jpg'
 import { Link } from 'react-router-dom';
 
 
 
 const Register = () => {
+    useTitle('Register')
     return (
         <div className="hero min-h-screen" style={{ backgroundImage: `url(${bg})` }}>
             <div className="hero-content flex-col lg:flex-row-reverse">

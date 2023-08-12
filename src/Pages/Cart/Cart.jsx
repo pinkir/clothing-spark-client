@@ -2,14 +2,18 @@ import { useState } from "react";
 import { FaDollarSign, FaTrashAlt } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/usetitle";
 
 
 const Cart = () => {
+    useTitle('Cart')
     const order = useLoaderData();
     const orderItem = order.slice(0, 10)
-    const [items, setItems] = useState(order);
+    const [items, setItems] = useState(orderItem);
 
     const handleDelete = (id) => {
+        const updatedItems = items.filter(i => i.id !== id);
+            setItems(updatedItems);
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -19,8 +23,7 @@ const Cart = () => {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
-            const updatedItems = items.filter(i => i.id !== id);
-            setItems(updatedItems);
+            
             if (result.isConfirmed) {
                 Swal.fire(
                     'Deleted!',
@@ -56,7 +59,7 @@ const Cart = () => {
                         </thead>
                         <tbody>
                             {
-                                orderItem.map((item, index) => <tr key={item.id}>
+                                items.map((item, index) => <tr key={item.id}>
                                     <td>
                                         <label>
                                             {index + 1}
@@ -80,11 +83,11 @@ const Cart = () => {
                                     <td>${item.price}</td>
                                     <td>
 
-                                        <FaTrashAlt onClick={() => handleDelete(item)} className=" text-red-600 text-2xl"></FaTrashAlt>
+                                        <FaTrashAlt onClick={() => handleDelete(item.id)} className=" text-red-600 text-2xl"></FaTrashAlt>
                                     </td>
                                     <td>
 
-                                        <FaDollarSign onClick={() => handleDelete(item.id)} className=" text-green-600 text-2xl"></FaDollarSign>
+                                        <FaDollarSign className=" text-green-600 text-2xl"></FaDollarSign>
                                     </td>
                                 </tr>)
                             }

@@ -1,8 +1,10 @@
 import { Link, useLoaderData } from "react-router-dom";
 import banner5 from '../../../images/banner4.jpg'
 import { FaGlasses, FaShoppingCart } from "react-icons/fa";
+import useTitle from "../../../Hooks/usetitle";
 
 const AllProducts = () => {
+    useTitle('All Products')
     const allProdutcs = useLoaderData();
     return (
         < div >
