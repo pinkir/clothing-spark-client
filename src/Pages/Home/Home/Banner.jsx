@@ -27,8 +27,8 @@ const Banner = () => {
             </div>
             <div className='flex justify-center gap-4 '>
                 <Zoom>
-                <img className='w-1/2 h-1/3  shadow-2xl ' src={male} />
-                <img className='w-1/2 h-1/3 shadow-2xl' src={female} />
+                <img className='w-1/3 h-1/3  shadow-2xl rounded-full ' src={male} />
+                <img className='w-1/3 h-1/3 shadow-2xl rounded-full' src={female} />
                 </Zoom>
 
             </div>

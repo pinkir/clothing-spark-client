@@ -4,6 +4,7 @@ import Main from "../layouts/Main";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ProductDetails from "../Pages/Home/Products/ProductDetails";
+import AllProducts from "../Pages/Home/Products/AllProducts";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,11 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+            },
+            {
+                path: "/allproduct",
+                element: <AllProducts></AllProducts>,
+                loader: () => fetch('/product.json'),
             },
             {
                 path: "/login",
