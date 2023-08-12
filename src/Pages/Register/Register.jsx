@@ -10,7 +10,7 @@ const Register = () => {
         <div className="hero min-h-screen" style={{ backgroundImage: `url(${bg})` }}>
             <div className="hero-content flex-col lg:flex-row-reverse">
 
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-sky-600 bg-opacity-20 my-8">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-sky-600 bg-opacity-20 my-8 mt-20">
                     <form className="card-body">
                         <div className="form-control">
                             <label className="label">
