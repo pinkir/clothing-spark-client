@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import {  useLoaderData, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
     const [state, setState] = useState([])
@@ -13,6 +14,16 @@ const ProductDetails = () => {
         }
 
     }, [])
+
+    const handleItem =() =>{
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Click on cart and review your order',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
 
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -34,7 +45,8 @@ const ProductDetails = () => {
                         <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
                     </div></p>
                     <p>Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestias velit saepe, aperiam totam necessitatibus obcaecati eveniet quo animi nihil quas porro asperiores quia, expedita quisquam reiciendis. Dolorum et dicta, quisquam nobis eveniet reprehenderit adipisci molestias officia? Ducimus quae ex ratione temporibus sequi eos pariatur quia iusto labore quibusdam modi facilis fugiat doloribus, explicabo in dolor, aut animi, beatae facere repellendus voluptatum consectetur. Porro sint quo eum obcaecati explicabo, ea corporis fuga fugit, consequatur esse suscipit aut exercitationem labore. </p>
-                    <button className="btn btn-wide bg-green-500 mt-2">Order</button>
+                    
+                    <button onClick={handleItem} className="btn btn-wide bg-green-500 mt-2">Order</button>
                 </div>
             </div>
         </div>
